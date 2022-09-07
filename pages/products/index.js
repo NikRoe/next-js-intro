@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getAllProducts } from "../services/productsServices";
+import { getAllProducts } from "../../services/productsServices";
 
 export function getServerSideProps() {
   const products = getAllProducts();

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getAllCategories } from "../services/categoriesServices";
+import { getAllCategories } from "../../services/categoriesServices";
 
 export function getServerSideProps() {
   const categories = getAllCategories();
