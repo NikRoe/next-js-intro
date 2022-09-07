@@ -18,7 +18,7 @@ export default function Categories({ categories }) {
         {categories.map((category) => {
           return (
             <li key={category.id}>
-              <Link href={`/category/${category.id}`}>
+              <Link href={`/categories/${category.id}`}>
                 <a>{category.name}</a>
               </Link>
             </li>
