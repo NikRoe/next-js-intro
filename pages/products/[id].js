@@ -11,11 +11,17 @@ export async function getServerSideProps(context) {
 }
 
 export default function ProductDetail({ product }) {
+  console.log(product);
   return (
     <>
       <h1>{product.name}</h1>
       <p>Beschreibung: {product.description}</p>
-      <p>Aus der Kategorie: {product.category}</p>
+      <p>Aus den Kategorien: </p>
+
+      <ul>
+        <li>{product.category.name}</li>
+        <li>{product.category.description}</li>
+      </ul>
     </>
   );
 }

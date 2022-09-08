@@ -12,6 +12,7 @@ export async function getServerSideProps() {
 }
 
 export default function Products({ products }) {
+  console.log(products);
   return (
     <>
       <h1>Produkte</h1>
