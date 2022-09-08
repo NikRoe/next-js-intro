@@ -1,9 +1,9 @@
 import { getProductById } from "../../services/productsServices";
 
-export function getServerSideProps(context) {
-  const id = Number(context.params.id);
+export async function getServerSideProps(context) {
+  const { id } = context.params;
 
-  const product = getProductById(id);
+  const product = await getProductById(id);
 
   return {
     props: { product: product },

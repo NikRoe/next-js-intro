@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { getAllProducts } from "../../services/productsServices";
 
-export function getServerSideProps() {
-  const products = getAllProducts();
+export async function getServerSideProps() {
+  const products = await getAllProducts();
 
   return {
-    props: { products: products },
+    props: {
+      products: products,
+    },
   };
 }
 
