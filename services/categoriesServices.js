@@ -1,35 +1,22 @@
-const categories = [
-  {
-    id: 1,
-    name: "Süßwasser",
-    description: "Bewohner von Binnengewässern wie Flüsse und Seen",
-  },
-  {
-    id: 2,
-    name: "Meerwasser",
-    description: "Fühlen sich in Salzwasser wohl",
-  },
-  {
-    id: 3,
-    name: "Muscheln",
-    description: "Harte Schale, weicher Kern",
-  },
-  {
-    id: 4,
-    name: "Korallen und Blumentiere",
-    description: "Sehen hübsch aus",
-  },
-  {
-    id: 5,
-    name: "Wirbellose",
-    description: "Seesterne, Krill und Krebstiere",
-  },
-];
+import dbConnect from "../dbConnect";
+import Category from "../models/Category";
 
-export function getAllCategories() {
-  return categories;
+export async function getAllCategories() {
+  await dbConnect();
+
+  const categories = await Category.find();
+
+  return categories.map(({ name, description, id }) => {
+    return { name, description, id };
+  });
 }
 
-export function getCategoryById(id) {
-  return categories.find((category) => category.id === id);
+export async function getCategoryById(categoryId) {
+  await dbConnect();
+
+  const category = await Category.findById(categoryId);
+
+  const { name, description, id } = category;
+
+  return { name, id, description };
 }

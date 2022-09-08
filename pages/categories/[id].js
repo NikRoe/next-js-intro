@@ -1,9 +1,9 @@
 import { getCategoryById } from "../../services/categoriesServices";
 
 export async function getServerSideProps(context) {
-  const id = Number(context.params.id);
+  const id = context.params.id;
 
-  const category = getCategoryById(id);
+  const category = await getCategoryById(id);
 
   return {
     props: { category: category },
