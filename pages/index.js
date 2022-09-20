@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image from 'next/image';
+import styled from 'styled-components';
 
 export default function Home() {
   return (
@@ -14,3 +15,16 @@ export default function Home() {
     </>
   );
 }
+
+const Head = styled.header`
+  background-color: #333333;
+  width: 100%;
+  height: 48px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  margin: 0;
+`;

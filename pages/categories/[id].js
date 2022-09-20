@@ -1,4 +1,4 @@
-import { getCategoryById } from "../../services/categoriesServices";
+import { getCategoryById } from '../../services/categoriesServices';
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
